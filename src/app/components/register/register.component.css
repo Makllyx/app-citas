@@ -1,0 +1,67 @@
+/* Fondo con degradado */
+.register-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to right, #2b6cb0, #3182ce);
+}
+
+/* Tarjeta de registro */
+.card {
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Encabezado con fondo azul */
+.card-header {
+    background: #2b6cb0;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Estilo de los campos de entrada */
+.form-control {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+/* Botón de registro */
+.btn-primary {
+    background: #facc15;
+    border: none;
+    font-weight: bold;
+    padding: 10px;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Cambio de color al pasar el mouse sobre el botón */
+.btn-primary:hover {
+    background: #fbbf24;
+}
+
+/* Mensaje de error */
+.text-danger {
+    font-size: 0.9rem;
+}
+
+/* Estilos para el checkbox de términos */
+.form-check-label {
+    font-size: 0.9rem;
+}
+
+/* Enlace de inicio de sesión */
+.text-center a {
+    color: #facc15;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.text-center a:hover {
+    color: #fbbf24;
+}

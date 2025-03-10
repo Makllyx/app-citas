@@ -1,0 +1,54 @@
+/* Sección Hero */
+.hero {
+  background: linear-gradient(to right, #2b6cb0, #3182ce);
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.hero span {
+  color: #facc15;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Formularios */
+form {
+  text-align: left;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Campos de entrada */
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Botón de enviar */
+.btn-primary {
+  background: #3182ce;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #2b6cb0;
+}
+
+/* Etiquetas */
+.form-group label {
+  font-weight: bold;
+  color: #2b6cb0;
+}

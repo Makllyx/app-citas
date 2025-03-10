@@ -1,0 +1,199 @@
+/* Sección Hero */
+.hero {
+    background: linear-gradient(to right, #2b6cb0, #3182ce);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .hero span {
+    color: #facc15;
+  }
+  
+  .search-box {
+    margin-top: 20px;
+  }
+  
+  .search-box input {
+    padding: 10px;
+    width: 250px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .search-box button {
+    padding: 10px 20px;
+    background: #facc15;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  /* Sección de Servicios */
+  .services {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .service {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+  }
+  
+  .service img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  /* Sección Acerca de */
+  .about {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+    background: #f7fafc;
+  }
+  
+  .about-text {
+    max-width: 500px;
+  }
+  
+  .about h2 {
+    font-size: 2rem;
+    color: #2b6cb0;
+  }
+  
+  .about span {
+    color: #facc15;
+  }
+  
+  .about-image img {
+    width: 300px;
+    border-radius: 10px;
+  }
+
+/* Estilo general para los cuadros de los médicos */
+.team-item {
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-item:hover {
+    transform: translateY(-5px); /* Efecto al pasar el mouse */
+}
+
+/* Contenedor de los médicos en fila */
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Tarjeta individual de cada médico */
+.team-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    max-width: 600px; /* Ajusta según necesidad */
+    width: 100%;
+}
+
+/* Efecto al pasar el mouse */
+.team-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Imagen alineada a la izquierda */
+.team-img {
+    width: 40%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.team-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Contenido a la derecha */
+.team-content {
+    width: 60%;
+    padding: 20px;
+}
+
+/* Estilos del contenido */
+.team-content h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.team-content h6 {
+    font-size: 16px;
+    color: #007bff;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.team-content p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Estilo de los botones de redes sociales */
+.team-content .d-flex {
+    gap: 10px;
+}
+
+.team-content .btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: #fff;
+    transition: background 0.3s ease-in-out;
+}
+
+.team-content .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsivo: En pantallas pequeñas, la imagen y el contenido se apilan */
+@media (max-width: 768px) {
+    .team-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .team-img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .team-content {
+        width: 100%;
+    }
+}

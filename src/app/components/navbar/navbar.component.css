@@ -1,0 +1,31 @@
+/* Estilos para la barra de navegación */
+.navbar {
+    background: linear-gradient(to right, #2b6cb0, #3182ce);
+    padding: 15px;
+}
+
+/* Estilos para los enlaces de la barra de navegación */
+.navbar-nav .nav-link {
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover en los enlaces */
+.navbar-nav .nav-link:hover {
+    color: #facc15;
+}
+
+/* Estilos para el enlace activo */
+.navbar-nav .nav-link.active {
+    color: #facc15 !important;
+}
+
+/* Botón de menú hamburguesa */
+.navbar-toggler {
+    border-color: white;
+}
+
+.navbar-toggler-icon {
+    background-color: white;
+}

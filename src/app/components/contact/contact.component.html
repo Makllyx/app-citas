@@ -1,0 +1,43 @@
+<div class="hero">
+    <h1>¡Contáctanos!</h1>
+    <p>Estamos aquí para ayudarte. Envíanos un mensaje y te responderemos lo antes posible.</p>
+</div>
+
+<div class="container mt-5">
+    <h1>Contáctanos</h1>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="name" formControlName="name">
+                    <div *ngIf="submitted && contactForm.controls['name'].errors" class="text-danger">
+                        <div *ngIf="contactForm.controls['name'].errors['required']">El nombre es requerido</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" formControlName="email">
+                    <div *ngIf="submitted && contactForm.controls['email'].errors" class="text-danger">
+                        <div *ngIf="contactForm.controls['email'].errors['required']">El email es requerido</div>
+                        <div *ngIf="contactForm.controls['email'].errors['email']">El email debe ser válido</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="message" rows="5" formControlName="message"></textarea>
+                    <div *ngIf="submitted && contactForm.controls['message'].errors" class="text-danger">
+                        <div *ngIf="contactForm.controls['message'].errors['required']">El mensaje es requerido</div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h3>Información de Contacto</h3>
+            <p><i class="bi bi-geo-alt"></i> Dirección: Calle Principal 123, Ciudad</p>
+            <p><i class="bi bi-envelope"></i> Email: contactoappcitas.com</p>
+            <p><i class="bi bi-telephone"></i> Teléfono: +123 456 7890</p>
+        </div>
+    </div>
+</div>

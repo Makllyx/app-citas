@@ -1,0 +1,59 @@
+/* Sección Hero */
+.hero {
+  background: linear-gradient(to right, #2b6cb0, #3182ce);
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.hero span {
+  color: #facc15;
+}
+
+.search-box {
+  margin-top: 20px;
+}
+
+.search-box input {
+  padding: 10px;
+  width: 250px;
+  border-radius: 5px;
+  border: none;
+}
+
+.search-box button {
+  padding: 10px 20px;
+  background: #facc15;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Estilos generales de la página About */
+.container {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+h3 {
+  color: #2b6cb0;
+  font-weight: bold;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  background: #f1f1f1;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
