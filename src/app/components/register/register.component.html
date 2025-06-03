@@ -1,62 +1,32 @@
 <div class="register-container">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-8">
-          <div class="card">
-            <div class="card-header">
-              Crear una cuenta
-            </div>
-            <div class="card-body">
-              <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-                <div class="mb-3">
-                  <label for="name" class="form-label">Nombre completo</label>
-                  <input type="text" class="form-control" id="name" formControlName="name">
-                  <div *ngIf="submitted && registerForm.controls['name'].errors" class="text-danger">
-                    <div *ngIf="registerForm.controls['name'].errors['required']">El nombre es requerido</div>
-                  </div>
-                </div>
-                <div class="mb-3">
-                  <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email" formControlName="email">
-                  <div *ngIf="submitted && registerForm.controls['email'].errors" class="text-danger">
-                    <div *ngIf="registerForm.controls['email'].errors['required']">El email es requerido</div>
-                    <div *ngIf="registerForm.controls['email'].errors['email']">El email debe ser válido</div>
-                  </div>
-                </div>
-                <div class="mb-3">
-                  <label for="password" class="form-label">Contraseña</label>
-                  <input type="password" class="form-control" id="password" formControlName="password">
-                  <div *ngIf="submitted && registerForm.controls['password'].errors" class="text-danger">
-                    <div *ngIf="registerForm.controls['password'].errors['required']">La contraseña es requerida</div>
-                    <div *ngIf="registerForm.controls['password'].errors['minlength']">La contraseña debe tener al menos 6 caracteres</div>
-                  </div>
-                </div>
-                <div class="mb-3">
-                  <label for="confirmPassword" class="form-label">Confirmar contraseña</label>
-                  <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword">
-                  <div *ngIf="submitted && registerForm.controls['confirmPassword'].errors" class="text-danger">
-                    <div *ngIf="registerForm.controls['confirmPassword'].errors['required']">La confirmación de contraseña es requerida</div>
-                    <div *ngIf="registerForm.controls['confirmPassword'].errors['mustMatch']">Las contraseñas deben coincidir</div>
-                  </div>
-                </div>
-                <div class="mb-3 form-check">
-                  <input type="checkbox" class="form-check-input" id="terms" formControlName="terms">
-                  <label class="form-check-label" for="terms">Acepto los términos y condiciones</label>
-                  <div *ngIf="submitted && registerForm.controls['terms'].errors" class="text-danger">
-                    <div *ngIf="registerForm.controls['terms'].errors['required']">Debes aceptar los términos y condiciones</div>
-                  </div>
-                </div>
-                <div class="d-grid gap-2">
-                  <button type="submit" class="btn btn-primary">Registrarse</button>
-                </div>
-              </form>
-              <div class="mt-3 text-center">
-                <p>¿Ya tienes una cuenta? <a routerLink="/iniciar-sesion">Inicia sesión aquí</a></p>
-              </div>
-            </div>
+  <div class="card" style="width: 100%; max-width: 600px;">
+    <div class="card-header">
+      <h3>Registro de Usuario</h3>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" formControlName="email">
+          <div *ngIf="submitted && registerForm.controls['email'].errors" class="text-danger">
+            <div *ngIf="registerForm.controls['email'].errors['required']">El email es requerido</div>
+            <div *ngIf="registerForm.controls['email'].errors['email']">Email no válido</div>
           </div>
         </div>
-      </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="password" formControlName="password">
+          <div *ngIf="submitted && registerForm.controls['password'].errors" class="text-danger">
+            <div *ngIf="registerForm.controls['password'].errors['required']">La contraseña es requerida</div>
+            <div *ngIf="registerForm.controls['password'].errors['minlength']">Mínimo 6 caracteres</div>
+          </div>
+        </div>
+
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-success">Registrarse</button>
+        </div>
+      </form>
     </div>
   </div>
-  
+</div>

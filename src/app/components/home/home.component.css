@@ -1,3 +1,46 @@
+.carousel-control-prev,
+.carousel-control-next {
+  display: flex !important;
+  z-index: 5;
+  opacity: 1 !important;
+}
+
+
+/* Limita el tamaño del carrusel y lo centra */
+#carouselServicios {
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+/* Ajusta las imágenes dentro del carrusel */
+#carouselServicios img {
+  height: 3000px;
+  object-fit: contain;
+}
+
+/* Opcional: mejora visibilidad de las flechas */
+.carousel-control-prev,
+.carousel-control-next {
+  opacity: 1;
+}
+
+/* Opcional: mejora visibilidad de los captions */
+.carousel-caption {
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+ /* Cambiar color de las flechas del carrusel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #2b6cb0;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  background-size: 100% 100%;
+}
+
+
 /* Sección Hero */
 .hero {
     background: linear-gradient(to right, #2b6cb0, #3182ce);

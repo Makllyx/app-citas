@@ -1,54 +1,52 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
+import { RegisterService } from '../../services/register.service';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterLink],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
+  providers: [RegisterService]
 })
 export class RegisterComponent {
   registerForm: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private registerService: RegisterService
+  ) {
     this.registerForm = this.formBuilder.group({
-      name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', Validators.required],
-      terms: [false, Validators.requiredTrue]
-    }, {
-      validator: this.mustMatch('password', 'confirmPassword')
+      password: ['', [Validators.required, Validators.minLength(6)]]
     });
-  }
-
-  mustMatch(controlName: string, matchingControlName: string) {
-    return (formGroup: FormGroup) => {
-      const control = formGroup.controls[controlName];
-      const matchingControl = formGroup.controls[matchingControlName];
-
-      if (matchingControl.errors && !matchingControl.errors['mustMatch']) {
-        return;
-      }
-
-      if (control.value !== matchingControl.value) {
-        matchingControl.setErrors({ mustMatch: true });
-      } else {
-        matchingControl.setErrors(null);
-      }
-    };
   }
 
   onSubmit() {
     this.submitted = true;
-    if (this.registerForm.valid) {
-      // Aquí iría la lógica de registro
-      console.log('Registro exitoso', this.registerForm.value);
-      this.router.navigate(['/iniciar-sesion']);
+
+    if (this.registerForm.invalid) {
+      return;
     }
+
+    const userData = this.registerForm.value;
+
+    this.registerService.register(userData).subscribe(response => {
+      if (response.success) {
+        alert('Registro exitoso');
+        this.router.navigate(['/iniciar-sesion']);
+      } else {
+        alert(response.message || 'Error al registrar');
+      }
+    }, error => {
+      console.error('Error al conectar con el servidor:', error);
+      alert('Error al conectar con el servidor');
+    });
   }
 }
+

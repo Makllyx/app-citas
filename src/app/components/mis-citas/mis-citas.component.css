@@ -1,49 +1,58 @@
-/* Fondo con degradado como login */
-.agendar-container {
+.login-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 100vh;
   background: linear-gradient(to right, #2b6cb0, #3182ce);
 }
 
-/* Tarjeta */
 .card {
-  width: 100%;
-  max-width: 450px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Encabezado azul */
 .card-header {
   background: #2b6cb0;
   color: white;
-  text-align: center;
   font-size: 1.5rem;
   font-weight: bold;
+  padding: 1rem;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  padding: 15px;
 }
 
-/* Campos */
-.form-control {
-  border-radius: 5px;
-  padding: 10px;
-  font-size: 1rem;
+.card-body {
+  padding: 1rem;
 }
 
-/* Botón */
 .btn-primary {
   background: #facc15;
   border: none;
   font-weight: bold;
-  padding: 12px;
+  padding: 10px;
   transition: background 0.3s ease-in-out;
-  border-radius: 5px;
 }
 
 .btn-primary:hover {
   background: #fbbf24;
 }
+
+.btn-danger {
+  font-weight: bold;
+}
+
+.list-group-item {
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+.text-center a {
+  color: #ffffff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.text-center a:hover {
+  color: #fbbf24;
+}
+

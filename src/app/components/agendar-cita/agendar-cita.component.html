@@ -1,47 +1,35 @@
-<div class="hero">
-  <h1>¡Agenda tu Cita Médica!</h1>
-  <p>Selecciona un doctor, elige la fecha y hora para recibir la mejor atención.</p>
+<div class="agendar-container">
+  <div class="card p-4">
+    <div class="card-header">Agendar Nueva Cita</div>
+
+    <div class="form-group mt-3">
+      <label for="doctor">Doctor</label>
+      <select id="doctor" class="form-control" (change)="onDoctorChange($event)">
+        <option *ngFor="let doctor of doctors" [value]="doctor">{{ doctor }}</option>
+      </select>
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="especialidad">Especialidad</label>
+      <select id="especialidad" class="form-control" (change)="onEspecialidadChange($event)">
+        <option *ngFor="let especialidad of especialidades" [value]="especialidad">{{ especialidad }}</option>
+      </select>
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="fecha">Fecha</label>
+      <input type="date" id="fecha" class="form-control" (change)="onFechaChange($event)">
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="hora">Hora</label>
+      <select id="hora" class="form-control" (change)="onHoraChange($event)">
+        <option *ngFor="let hora of horasDisponibles" [value]="hora">{{ hora }}</option>
+      </select>
+    </div>
+
+    <button class="btn btn-primary mt-4 w-100" (click)="agendarCita()">Agendar Cita</button>
+  </div>
 </div>
 
-<div class="container mt-5">
-  <h1>Agendar Cita</h1>
-  <form>
-      <!-- Campo de selección para elegir el doctor -->
-      <div class="form-group mt-4">
-          <label for="doctor">Selecciona un Doctor</label>
-          <select id="doctor" class="form-control" (change)="onDoctorChange($event)">
-              <option *ngFor="let doctor of doctors" [value]="doctor">{{ doctor }}</option>
-          </select>
-      </div>
-
-      <!-- Campo para seleccionar la especialidad -->
-      <div class="form-group mt-4">
-          <label for="especialidad">Especialidad</label>
-          <select id="especialidad" class="form-control" (change)="onEspecialidadChange($event)">
-              <option *ngFor="let especialidad of especialidades" [value]="especialidad">{{ especialidad }}</option>
-          </select>
-      </div>
-
-      <!-- Calendario para seleccionar la fecha -->
-      <div class="form-group mt-4">
-          <label for="fecha">Selecciona la Fecha</label>
-          <input type="date" class="form-control" (change)="onFechaChange($event)">
-      </div>
-
-      <!-- Campo para seleccionar la hora -->
-      <div class="form-group mt-4">
-          <label for="hora">Selecciona la Hora</label>
-          <select id="hora" class="form-control" (change)="onHoraChange($event)">
-              <option *ngFor="let hora of horasDisponibles" [value]="hora">{{ hora }}</option>
-          </select>
-      </div>
-
-      <!-- Botón de agendar cita -->
-      <button type="submit" class="btn btn-primary mt-3">Agendar Cita</button>
-  </form>
-</div>
-
-  
-  
-  
   
