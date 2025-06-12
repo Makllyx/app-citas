@@ -1,21 +1,19 @@
-/* Fondo con degradado como login */
-.agendar-container {
+/* Fondo con degradado */
+.login-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 100vh;
   background: linear-gradient(to right, #2b6cb0, #3182ce);
 }
 
-/* Tarjeta */
+/* Tarjeta de inicio de sesión */
 .card {
-  width: 100%;
-  max-width: 450px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Encabezado azul */
+/* Encabezado con fondo azul */
 .card-header {
   background: #2b6cb0;
   color: white;
@@ -24,27 +22,43 @@
   font-weight: bold;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  padding: 15px;
 }
 
-/* Campos */
+/* Estilo de los campos de entrada */
 .form-control {
   border-radius: 5px;
   padding: 10px;
   font-size: 1rem;
 }
 
-/* Botón */
+/* Botón de inicio de sesión */
 .btn-primary {
   background: #facc15;
   border: none;
   font-weight: bold;
-  padding: 12px;
+  padding: 10px;
   transition: background 0.3s ease-in-out;
-  border-radius: 5px;
+  color: #ffffff;
 }
 
+/* Cambio de color al pasar el mouse sobre el botón */
 .btn-primary:hover {
   background: #fbbf24;
   color: #b39802;
+}
+
+/* Mensaje de error */
+.text-danger {
+  font-size: 0.9rem;
+}
+
+/* Enlace de registro */
+.text-center a {
+  color: #facc15;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.text-center a:hover {
+  color: #fbbf24;
 }

@@ -65,3 +65,20 @@
 .text-center a:hover {
     color: #fbbf24;
 }
+
+/* ...existing code... */
+.btn-success {
+    background: #facc15;
+    border: none;
+    font-weight: bold;
+    padding: 10px;
+    transition: background 0.3s ease-in-out;
+    color: #ffffff;
+}
+
+.btn-success:hover {
+    background: #fbbf24;
+    color: #b39802;
+}
+/* ...existing code... */
+

@@ -1,30 +1,29 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-doctor',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
-    <div class="text-center mt-5">
-      <h2>Bienvenido, Doctor {{ nombreDoctor }}</h2>
-      <button class="btn btn-danger mt-3" (click)="cerrarSesion()">Cerrar sesión</button>
-    </div>
-  `,
-  styles: [`
-    .text-center {
-      text-align: center;
-    }
-  `]
+  templateUrl: './doctor.component.html',
+  styleUrls: ['./doctor.component.css']
 })
-export class DoctorComponent {
-  nombreDoctor = localStorage.getItem('nombreUsuario');
+export class DoctorComponent implements OnInit {
+  nombre = '';
 
   constructor(private router: Router) {}
 
-  cerrarSesion() {
-    localStorage.clear();
-    this.router.navigate(['/inicio']);
+  ngOnInit(): void {
+    const storedName = localStorage.getItem('doctor_nombre');
+    if (!storedName) {
+      this.router.navigate(['/login-doctor']);
+    } else {
+      this.nombre = storedName;
+    }
+  }
+
+  logout() {
+    localStorage.removeItem('doctor_id');
+    localStorage.removeItem('doctor_nombre');
+    this.router.navigate(['/login-doctor']);
   }
 }
+
